@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { Container, Typography, Paper, Button } from '@mui/material';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -36,7 +36,7 @@ const Footer = () => {
 
 export default Footer;`;
 
-const CodeDisplay = () => {
+const Homepage = () => {
     const copyToClipboard = (code) => {
         navigator.clipboard.writeText(code)
             .then(() => alert("Mã nguồn đã được copy!"))
@@ -87,4 +87,4 @@ const CodeDisplay = () => {
     );
 };
 
-export default CodeDisplay;
+export default Homepage;
