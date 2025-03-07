@@ -9,10 +9,10 @@ import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem
 import { Menu } from "@mui/icons-material";
 
 // Import custom constants
-import headerItems from "../../constants/headerItems";
+import headerItems from "../../constants/header-items";
 
 // Import custom styles
-import headerStyles from "../../styles/HeaderStyles"
+import headerStyles from "../../styles/header-styles"
 
 const Header = () => {
     const navigate = useNavigate();
@@ -33,7 +33,7 @@ const Header = () => {
                 {/* Desktop Navigation */}
                 <Box sx={headerStyles.navButtons}>
                     {headerItems.map((item) => (
-                        <Button key={item.path} color="inherit" onClick={() => handleNavigation(item.path)} sx={ headerStyles.buttonLabel }>
+                        <Button key={item.path} color="inherit" onClick={() => handleNavigation(item.path)} sx={headerStyles.buttonLabel}>
                             {item.label}
                         </Button>
                     ))}
