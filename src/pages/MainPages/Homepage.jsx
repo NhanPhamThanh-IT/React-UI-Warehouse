@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { BannerSection } from '../../sections/BannerSection';
+import { IntroSection } from '../../sections/IntroSection';
+
+import { HOMEPAGE_DATAS } from '../../constants/homepage-datas';
 
 const Homepage = () => {
     return (
         <>
-            <BannerSection />
+            <IntroSection data={HOMEPAGE_DATAS} />
         </>
     );
 };
