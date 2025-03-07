@@ -1,6 +1,11 @@
-// Desc: Header component for the application
+/**
+ * Header component for the application.
+ * 
+ * @component
+ * @returns {JSX.Element} The Header component
+ */
 
-// Import necessary React modules
+// Import dependencies
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,12 +17,22 @@ import { Menu } from "@mui/icons-material";
 import headerItems from "../../constants/header-items";
 
 // Import custom styles
-import headerStyles from "../../styles/header-styles"
+import headerStyles from "../../styles/header-styles";
 
+/**
+ * Renders the header of the application, including navigation buttons and a mobile drawer.
+ * 
+ * @returns {JSX.Element} Header component
+ */
 const Header = () => {
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
 
+    /**
+     * Handles navigation when a menu item is clicked.
+     * 
+     * @param {string} path - The path to navigate to
+     */
     const handleNavigation = useCallback((path) => {
         navigate(path);
         setIsOpen(false);
@@ -61,4 +76,5 @@ const Header = () => {
     );
 };
 
+// Export the Header component
 export default Header;

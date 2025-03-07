@@ -1,6 +1,11 @@
-// Desc: Footer component for the app
+/**
+ * Footer component for the app.
+ * 
+ * @component
+ * @returns {JSX.Element} The Footer component
+ */
 
-// Importing necessary dependencies
+// Importing necessary modules
 import React from 'react';
 import { IconButton, Typography, Box, Divider, Link } from '@mui/material';
 
@@ -10,7 +15,11 @@ import { PRODUCT_NAME, PRODUCT_LOGO, MENU_LINKS, SOCIAL_ICONS, ICONS_COLOR } fro
 // Importing footer styles
 import { footerStyles } from '../../styles/footer-styles';
 
-// Defining and exporting the Footer component
+/**
+ * Renders the footer section of the application, including navigation links, social icons, and copyright information.
+ * 
+ * @returns {JSX.Element} Footer component
+ */
 export default function Footer() {
     return (
         <Box component="footer" sx={footerStyles.footerContainer}>
