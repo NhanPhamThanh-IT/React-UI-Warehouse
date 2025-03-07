@@ -4,20 +4,32 @@
 const headerStyles = {
     appBar: {
         position: "static",
-        color: "default",
-        boxShadow: 2
+        boxShadow: 2,
+        color: "white",
+        backgroundColor: "black"
     },
     title: {
         flexGrow: 1,
         fontWeight: "bold",
-        color: "#4F46E5"
+        color: "white"
     },
     navButtons: {
         display: { xs: "none", md: "flex" },
-        gap: 2
+        gap: 2,
+    },
+    buttonLabel: {
+        fontWeight: 600,
+        textTransform: "none",
+        fontSize: "1rem",
+        "&:hover": {
+            backgroundColor: "white",
+            color: "black"
+        },
+        transition: "all 0.3s"
     },
     menuIcon: {
-        display: { xs: "block", md: "none" }
+        display: { xs: "block", md: "none" },
+        color: "white"
     },
     drawerBox: {
         width: 250

@@ -4,7 +4,7 @@
 import { useRoutes, BrowserRouter, Navigate } from "react-router-dom";
 
 // Importing custom components
-import Layout from "../components/Layout/Index";
+import Layout from "../components/layout";
 
 // Importing pages
 import Homepage from "../pages/MainPages/Homepage";

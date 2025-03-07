@@ -1,8 +1,17 @@
+// Desc: Header component for the application
+
+// Import necessary React modules
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+
+// Import necessary MUI components
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import { Menu } from "@mui/icons-material";
+
+// Import custom constants
 import headerItems from "../../constants/headerItems";
+
+// Import custom styles
 import headerStyles from "../../styles/HeaderStyles"
 
 const Header = () => {
@@ -24,7 +33,7 @@ const Header = () => {
                 {/* Desktop Navigation */}
                 <Box sx={headerStyles.navButtons}>
                     {headerItems.map((item) => (
-                        <Button key={item.path} color="inherit" onClick={() => handleNavigation(item.path)}>
+                        <Button key={item.path} color="inherit" onClick={() => handleNavigation(item.path)} sx={ headerStyles.buttonLabel }>
                             {item.label}
                         </Button>
                     ))}
