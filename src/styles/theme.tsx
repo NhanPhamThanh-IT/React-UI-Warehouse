@@ -8,6 +8,15 @@ const theme = createTheme({
     typography: {
         fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
     },
+    components: {
+        MuiGrid: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                },
+            },
+        },
+    },
 });
 
 // Exporting theme

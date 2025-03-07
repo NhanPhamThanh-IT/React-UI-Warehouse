@@ -12,7 +12,8 @@
 export const HOMEPAGE_DATAS = {
     banner: '/homepage-banner.jpg',
     title: 'Get Started Now 🚀',
-    description: 'This is a website template that is created by NhanPhamThanh-IT™. It is built with ReactJS and Material-UI. Feel free to use it for your projects!',
+    subtitle: 'Welcome to the React Template Gallery!',
+    description: 'Explore a vast collection of professional templates designed to help you build stunning websites quickly and efficiently. 🚀 Easily preview, copy source code, and customize to fit your needs. ✨ Save time, enhance quality – all with just a few clicks! 🔥',
     image: '/homepage-image.jpg',
     image_alt: 'Homepage Image'
 };

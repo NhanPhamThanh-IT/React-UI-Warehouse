@@ -1,31 +1,50 @@
+// Desc: IntroSection component displays an introductory section with a background image, title, subtitle, description, and action buttons.
+
+// Import necessary modules
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Typography, Box } from '@mui/material';
-import BackgroundImage from '../components/images/display-as-background';
-import { ActionButton } from '../components/buttons/action-button';
 import { Rocket, Book } from 'lucide-react';
 
+// Import custom components
+import BackgroundImage from '../components/images/display-as-background';
+import { ActionButton } from '../components/buttons/action-button';
+
+// Import custom styles
+import styles from '../styles/sections/intro-section-styles';
+
+/**
+ * IntroSection component displays an introductory section with a background image,
+ * title, subtitle, description, and action buttons.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.data - Data for rendering the intro section.
+ * @param {string} props.data.banner - URL of the background image.
+ * @param {string} props.data.subtitle - Subtitle text.
+ * @param {string} props.data.title - Title text.
+ * @param {string} props.data.description - Description text.
+ * @param {string} props.data.image - URL of the intro section image.
+ * @param {string} [props.data.image_alt] - Alternative text for the image.
+ * @returns {JSX.Element} The rendered intro section.
+ */
 export const IntroSection = ({ data }) => {
     return (
         <BackgroundImage url={data.banner}>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    px: 2,
-                    py: 4,
-                }}
-            >
-                <Grid container spacing={4} alignItems="center">
-                    {/* Text Content */}
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="h2" fontWeight="bold" color="white">
+            <Box sx={styles.container}>
+                <Grid container spacing={4} alignItems={'stretch'}>
+                    {/* Text content */}
+                    <Grid item xs={12} md={5} sx={{ margin: 0 }}>
+                        <Typography variant="subtitle1" sx={styles.subtitleContainer}>
+                            {data.subtitle}
+                        </Typography>
+                        <Typography variant="h3" sx={styles.titleContainer}>
                             {data.title}
                         </Typography>
-                        <Typography variant="body1" color="white" sx={{ mt: 2 }}>
+                        <Typography variant="body1" sx={styles.description}>
                             {data.description}
                         </Typography>
-                        <Box sx={{ mt: 3, display: 'flex', gap: 2 }}>
+                        <Box sx={styles.buttonContainer}>
                             <ActionButton icon={<Rocket size={20} />}>
                                 Get Started
                             </ActionButton>
@@ -35,23 +54,32 @@ export const IntroSection = ({ data }) => {
                         </Box>
                     </Grid>
 
-                    {/* Image Section */}
-                    <Grid item xs={12} sm={6} display="flex" justifyContent="center">
+                    {/* Image */}
+                    <Grid item xs={12} md={7} display="flex" sx={{ justifyContent: { xs: 'center', md: 'flex-end' } }}>
                         <Box
                             component="img"
                             src={data.image}
                             alt={data.image_alt || 'Intro Image'}
-                            sx={{
-                                width: '100%',
-                                maxWidth: 500,
-                                objectFit: 'contain',
-                                borderRadius: 2,
-                                boxShadow: 3,
-                            }}
+                            sx={styles.image}
                         />
                     </Grid>
                 </Grid>
             </Box>
         </BackgroundImage>
     );
+};
+
+/**
+ * PropTypes for the IntroSection component.
+ * Defines the expected data types for the component props.
+ */
+IntroSection.propTypes = {
+    data: PropTypes.shape({
+        banner: PropTypes.string.isRequired,
+        subtitle: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        image_alt: PropTypes.string,
+    }).isRequired,
 };
