@@ -17,7 +17,7 @@ import { Menu } from "@mui/icons-material";
 import headerItems from "../../constants/header-items";
 
 // Import custom styles
-import headerStyles from "../../styles/header-styles";
+import headerStyles from "../../styles/components/header-styles";
 
 /**
  * Renders the header of the application, including navigation buttons and a mobile drawer.
