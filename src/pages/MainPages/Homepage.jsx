@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { IntroSection } from '../../sections/IntroSection';
+import { FeaturesSection } from '../../sections/FeaturesSection';
 
-import { HOMEPAGE_DATAS } from '../../constants/homepage-datas';
+import { INTRO_DATAS, FEATURES_DATAS } from '../../constants/homepage-datas';
 
 const Homepage = () => {
     return (
         <>
-            <IntroSection data={HOMEPAGE_DATAS} />
+            <IntroSection data={INTRO_DATAS} />
+            <FeaturesSection data={FEATURES_DATAS} />
         </>
     );
 };
