@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardContent, Icon, Typography } from '@mui/material'
+import { Card, CardContent, Typography } from '@mui/material'
 
-const FeatureCard = ({ icon, title, description }) => {
+import { styles } from '../../styles/components/feature-card-styles';
+
+const FeatureCard = ({ icon: Icon, title, description }) => {
     return (
-        <Card sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-            <CardContent>
-                <Icon>{icon}</Icon>
-                <Typography variant="h6">{title}</Typography>
+        <Card sx={styles.cardContainer}>
+            <CardContent sx={styles.cardContent}>
+                <Icon fontSize="large" />
+                <Typography variant="title1" sx={styles.cardTitle}>{title}</Typography>
                 <Typography>{description}</Typography>
             </CardContent>
         </Card>

@@ -1,10 +1,37 @@
+/**
+ * Description: This file represents the FeaturesSection component.
+ */
+
+/**
+ * Importing necessary components from Material-UI library.
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Grid, Typography } from '@mui/material';
+
+/**
+ * Importing the FeatureCard component.
+ */
 import FeatureCard from '../components/cards/feature-card';
 
+/**
+ * Importing styles from the FeaturesSection component stylesheet.
+ */
 import { styles } from '../styles/sections/features-section-styles';
 
+/**
+ * FeaturesSection Component
+ * 
+ * This component renders a section showcasing various features using feature cards.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Object} props.data - The data containing title, subtitle, and features.
+ * @param {string|string[]} props.data.title - The main title of the section. Can be a string or an array of strings.
+ * @param {string} [props.data.subtitle] - An optional subtitle for the section.
+ * @param {Array<Object>} props.data.features - An array of feature objects to be displayed in the feature cards.
+ * @returns {JSX.Element|null} The rendered FeaturesSection component, or null if data is missing.
+ */
 export const FeaturesSection = ({ data }) => {
     if (!data || !data.features) return null;
 
@@ -27,10 +54,10 @@ export const FeaturesSection = ({ data }) => {
                     {titleArray[1]}
                 </Typography>
             </Typography>
-            <Grid container spacing={3} justifyContent="center" alignItems="stretch">
+            <Grid container sx={styles.FeatureCardLayoutContainer} spacing={3}>
                 {data?.features?.map((feature) => (
-                    <Grid item xs={12} sm={6} lg={3} key={feature.id || feature.name}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <Grid item xs={12} sm={6} md={3} key={feature.id || feature.name}>
+                        <Box sx={styles.featureCardContainer}>
                             <FeatureCard {...feature} />
                         </Box>
                     </Grid>
@@ -40,6 +67,9 @@ export const FeaturesSection = ({ data }) => {
     );
 };
 
+/**
+ * PropTypes for the FeaturesSection component.
+ */
 FeaturesSection.propTypes = {
     data: PropTypes.shape({
         title: PropTypes.oneOfType([
