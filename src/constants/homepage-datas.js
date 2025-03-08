@@ -39,22 +39,22 @@ export const FEATURES_DATAS = {
     features: [
         {
             icon: PenTool,
-            title: 'Professional Design',
+            title: 'Professional design',
             description: 'Beautifully crafted templates designed by professionals to help you build stunning websites.'
         },
         {
             icon: Smartphone,
-            title: 'Responsive Layout',
+            title: 'Responsive layout',
             description: 'Fully responsive and mobile-friendly designs that look great on any device.'
         },
         {
             icon: Wrench,
-            title: 'Easy to Customize',
+            title: 'Easy to customize',
             description: 'Easily customize and personalize the templates to fit your needs and preferences.'
         },
         {
             icon: Rocket,
-            title: 'Optimized Performance',
+            title: 'Optimized performance',
             description: 'Optimized for performance and speed to ensure a seamless user experience.'
         }
     ]
