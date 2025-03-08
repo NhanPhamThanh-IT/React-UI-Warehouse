@@ -14,10 +14,10 @@ import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem
 import { Menu } from "@mui/icons-material";
 
 // Import custom constants
-import headerItems from "../../constants/header-items";
+import headerItems from "../../../constants/header-items";
 
 // Import custom styles
-import headerStyles from "../../styles/components/header-styles";
+import headerStyles from "./styles";
 
 /**
  * Renders the header of the application, including navigation buttons and a mobile drawer.

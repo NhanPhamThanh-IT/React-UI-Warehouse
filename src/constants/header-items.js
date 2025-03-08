@@ -15,6 +15,7 @@
 const navItems = [
     { label: "Get Start", path: "/home" },
     { label: "Templates", path: "/templates" },
+    { label: "Docs", path: "/docs" },
     { label: "About", path: "/about-us" },
     { label: "Contact", path: "/contact-us" }
 ];

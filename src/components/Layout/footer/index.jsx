@@ -10,10 +10,10 @@ import React from 'react';
 import { IconButton, Typography, Box, Divider, Link } from '@mui/material';
 
 // Importing necessary icons and constants
-import { PRODUCT_NAME, PRODUCT_LOGO, MENU_LINKS, SOCIAL_ICONS, ICONS_COLOR } from '../../constants/footer-items';
+import { PRODUCT_NAME, PRODUCT_LOGO, MENU_LINKS, SOCIAL_ICONS, ICONS_COLOR } from '../../../constants/footer-items';
 
 // Importing footer styles
-import { footerStyles } from '../../styles/components/footer-styles';
+import { footerStyles } from './styles';
 
 /**
  * Renders the footer section of the application, including navigation links, social icons, and copyright information.

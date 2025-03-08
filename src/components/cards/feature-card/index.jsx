@@ -20,7 +20,7 @@ import { Box, Card, CardContent, Typography } from '@mui/material';
 /**
  * Importing styles from the FeatureCard component stylesheet.
  */
-import { styles } from '../../styles/components/feature-card-styles';
+import { styles } from './styles';
 
 /**
  * A component that displays a feature card with an icon, title, and description.

@@ -7,11 +7,11 @@ import { Grid, Typography, Box } from '@mui/material';
 import { Rocket, Book } from 'lucide-react';
 
 // Import custom components
-import BackgroundImage from '../components/images/display-as-background';
-import { ActionButton } from '../components/buttons/action-button';
+import BackgroundImage from '../../components/images/display-as-background';
+import { ActionButton } from '../../components/buttons/action-button';
 
 // Import custom styles
-import styles from '../styles/sections/intro-section-styles';
+import styles from './styles';
 
 /**
  * IntroSection component displays an introductory section with a background image,

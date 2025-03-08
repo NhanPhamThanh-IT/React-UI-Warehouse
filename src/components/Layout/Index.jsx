@@ -2,6 +2,9 @@
  * Layout component for the application.
  * 
  * @component
+ * @param {Object} props - Component props
+ * @param {boolean} [props.hasHeader=true] - Whether to display the Header
+ * @param {boolean} [props.hasFooter=true] - Whether to display the Footer
  * @returns {JSX.Element} The Layout component
  */
 
@@ -9,19 +12,17 @@
 import { Outlet } from "react-router-dom";
 
 // Importing custom components
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./header/index";
+import Footer from "./footer/index";
 
 /**
  * Renders the main layout of the application, including the Header, dynamic content via Outlet, and Footer.
- * 
- * @returns {JSX.Element} Layout component
  */
-const Layout = () => (
+const Layout = ({ hasHeader = true, hasFooter = true }) => (
     <>
-        <Header />
+        {hasHeader && <Header />}
         <Outlet />
-        <Footer />
+        {hasFooter && <Footer />}
     </>
 );
 

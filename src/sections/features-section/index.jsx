@@ -12,12 +12,12 @@ import { Box, Grid, Typography } from '@mui/material';
 /**
  * Importing the FeatureCard component.
  */
-import FeatureCard from '../components/cards/feature-card';
+import FeatureCard from '../../components/cards/feature-card/index';
 
 /**
  * Importing styles from the FeaturesSection component stylesheet.
  */
-import { styles } from '../styles/sections/features-section-styles';
+import { styles } from './styles';
 
 /**
  * FeaturesSection Component
@@ -40,7 +40,7 @@ export const FeaturesSection = ({ data }) => {
     return (
         <Box sx={styles.container}>
             {data.subtitle && (
-                <Typography variant="subtitle1" sx={styles.subtitleContainer} gutterBottom>
+                <Typography variant="subtitle2" sx={styles.subtitleContainer} gutterBottom>
                     {data.subtitle}
                 </Typography>
             )}

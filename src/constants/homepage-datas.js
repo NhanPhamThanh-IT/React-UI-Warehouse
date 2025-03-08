@@ -34,7 +34,7 @@ import { PenTool, Smartphone, Wrench, Rocket } from "lucide-react";
  * @property {string} features[].description - A brief description of the feature.
  */
 export const FEATURES_DATAS = {
-    title: ["Delightful Experience", "For You and Your Users"],
+    title: ["delightful experience", "for you and your users"],
     subtitle: "Why build with React Template Gallery?",
     features: [
         {

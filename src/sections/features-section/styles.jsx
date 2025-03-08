@@ -21,7 +21,7 @@ export const styles = {
      */
     titleContainer: {
         fontWeight: 'bold',
-        mb: 3,
+        mb: 3.5,
     },
 
     /**
@@ -39,22 +39,12 @@ export const styles = {
     /**
      * Subtitle container style.
      * @property {string} color - Text color.
-     * @property {string} backgroundColor - Background color with transparency.
-     * @property {number} borderRadius - Border radius for rounded corners.
-     * @property {number} px - Horizontal padding.
-     * @property {number} py - Vertical padding.
      * @property {string} width - Fit content width.
-     * @property {number} mb - Margin bottom value.
      * @property {number} fontWeight - Font weight value.
      */
     subtitleContainer: {
-        color: 'white',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        borderRadius: 3,
-        px: 2,
-        py: 1,
+        color: 'hsl(210, 100%, 45%)',
         width: 'fit-content',
-        mb: 1,
         fontWeight: 600,
     },
 
