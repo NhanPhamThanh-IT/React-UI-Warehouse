@@ -1,5 +1,5 @@
 /**
- * Import necessary libraries
+ * Import necessary libraries.
  */
 import React from "react";
 import Slider from "react-slick";
@@ -8,28 +8,32 @@ import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@mui/material";
 
 /**
- * Import constants for the component
+ * Import slider configuration constants.
  */
 import { settings } from "./constants";
 
 /**
- * Import custom styles
+ * Import custom styles for the slider component.
  */
 import { styles } from "./styles";
 
 /**
- * StackImageSlider component displays a slider containing a list of images.
+ * StackImageSlider is a component that renders an image slider using react-slick.
  *
  * @component
  * @example
- * const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
- * return <StackImageSlider images={images} />;
+ * // Example usage:
+ * const data = { images: ["image1.jpg", "image2.jpg", "image3.jpg"] };
+ * return <StackImageSlider data={data} />;
  *
  * @param {Object} props - Component properties.
- * @param {string[]} props.images - An array containing the URLs of the images to be displayed in the slider.
- * @returns {JSX.Element} A slider component displaying a list of images.
+ * @param {Object} props.data - Data object containing image details.
+ * @param {string[]} props.data.images - Array of image URLs to be displayed in the slider.
+ * @returns {JSX.Element} A slider component that displays a list of images.
  */
-export const StackImageSlider = ({ images }) => {
+export const StackImageSlider = ({ data }) => {
+    const { images } = data;
+
     return (
         <Box sx={styles.slider}>
             <Slider {...settings}>
@@ -38,7 +42,7 @@ export const StackImageSlider = ({ images }) => {
                         key={index}
                         component="img"
                         src={img}
-                        alt={`slide-${index}`}
+                        alt={`Slide ${index + 1}`}
                         sx={styles.slide}
                     />
                 ))}

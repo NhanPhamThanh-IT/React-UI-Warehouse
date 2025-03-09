@@ -12,7 +12,7 @@ export const Aboutpage = () => {
     return (
         <Box sx={styles.introContainer}>
             <HeadingSection data={IntroDatas} />
-            <StackImageSlider images={IntroDatas.images} />
+            <StackImageSlider data={IntroDatas} />
         </Box>
     );
 };
