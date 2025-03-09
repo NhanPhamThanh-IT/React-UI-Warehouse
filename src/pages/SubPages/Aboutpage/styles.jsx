@@ -6,6 +6,7 @@ export const styles = {
      * @property {string} alignItems - Align items property.
      * @property {string} textAlign - Text align property.
      * @property {number} mt - Margin top value.
+     * @property {string} backgroundImage - Background image property.
      */
     container: {
         display: 'flex',
@@ -13,5 +14,6 @@ export const styles = {
         alignItems: 'center',
         textAlign: 'center',
         mt: 4,
+        backgroundImage: 'linear-gradient(#FFF 0%, hsl(210, 100%, 96%) 100%)',
     },
 };
