@@ -11,7 +11,7 @@ import { Homepage } from "../pages/MainPages/Homepage";
 import { Docspage } from "../pages/MainPages/Docspage";
 import { Templatespage } from "../pages/MainPages/Templatespage";
 
-import { Aboutpage } from "../pages/SubPages/Aboutpage";
+import { Aboutpage } from "../pages/SubPages/Aboutpage/index";
 import { Contactpage } from "../pages/SubPages/Contactpage";
 
 import NotFoundPage from "../pages/ErrorPages/404";
