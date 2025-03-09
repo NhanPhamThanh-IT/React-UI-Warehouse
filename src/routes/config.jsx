@@ -9,6 +9,11 @@ import Layout from "../components/layout/index";
 // Importing pages
 import { Homepage } from "../pages/MainPages/Homepage";
 import { Docspage } from "../pages/MainPages/Docspage";
+import { Templatespage } from "../pages/MainPages/Templatespage";
+
+import { Aboutpage } from "../pages/SubPages/Aboutpage";
+import { Contactpage } from "../pages/SubPages/Contactpage";
+
 import NotFoundPage from "../pages/ErrorPages/404";
 
 // Defining routes
@@ -17,11 +22,18 @@ const AppRoutes = () => {
         { path: "/", element: <Navigate replace to="/home" /> },
         {
             element: <Layout />,
-            children: [{ path: "/home", element: <Homepage /> }],
+            children: [
+                { path: "/home", element: <Homepage /> },
+            ],
         },
         {
             element: <Layout hasFooter={false} />,
-            children: [{ path: "/docs", element: <Docspage /> }],
+            children: [
+                { path: "/templates", element: <Templatespage /> },
+                { path: "/docs", element: <Docspage /> },
+                { path: "/about", element: <Aboutpage /> },
+                { path: "/contact", element: <Contactpage /> },
+            ],
         },
         { path: "*", element: <NotFoundPage /> },
     ]);

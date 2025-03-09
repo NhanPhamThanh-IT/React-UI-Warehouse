@@ -24,14 +24,25 @@ const headerStyles = {
     },
 
     /**
+     * Styles for the title container.
+     * @property {Object} titleContainer
+     * @property {number} titleContainer.flexGrow - Flex grow value.
+     * @property {string} titleContainer.display - Display settings.
+     * @property {string} titleContainer.justifyContent - Justification settings.
+     */
+    titleContainer: {
+        flexGrow: 1,
+        display: "flex",
+        justifyContent: "flex-start"
+    },
+
+    /**
      * Styles for the title text.
      * @property {Object} title
-     * @property {number} title.flexGrow - Flex grow property for spacing.
      * @property {string} title.fontWeight - Font weight.
      * @property {string} title.color - Text color.
      */
     title: {
-        flexGrow: 1,
         fontWeight: "bold",
         color: "white"
     },

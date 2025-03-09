@@ -14,7 +14,7 @@ import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem
 import { Menu } from "@mui/icons-material";
 
 // Import custom constants
-import headerItems from "../../../constants/header-items";
+import headerItems from "./constants";
 
 // Import custom styles
 import headerStyles from "./styles";
@@ -41,9 +41,11 @@ const Header = () => {
     return (
         <AppBar sx={headerStyles.appBar}>
             <Toolbar>
-                <Typography variant="h6" sx={headerStyles.title}>
-                    AestheticHub
-                </Typography>
+                <Button onClick={() => navigate("/")} sx={headerStyles.titleContainer}>
+                    <Typography variant="h6" sx={headerStyles.title}>
+                        AestheticHub
+                    </Typography>
+                </Button>
 
                 {/* Desktop Navigation */}
                 <Box sx={headerStyles.navButtons}>
