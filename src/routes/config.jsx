@@ -24,6 +24,7 @@ const AppRoutes = () => {
             element: <Layout />,
             children: [
                 { path: "/home", element: <Homepage /> },
+                { path: "/about", element: <Aboutpage /> },
             ],
         },
         {
@@ -31,7 +32,6 @@ const AppRoutes = () => {
             children: [
                 { path: "/templates", element: <Templatespage /> },
                 { path: "/docs", element: <Docspage /> },
-                { path: "/about", element: <Aboutpage /> },
                 { path: "/contact", element: <Contactpage /> },
             ],
         },
