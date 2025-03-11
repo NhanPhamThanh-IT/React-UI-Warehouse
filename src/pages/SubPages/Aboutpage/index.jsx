@@ -54,7 +54,7 @@ export const Aboutpage = () => {
             </Box>
 
             {/* Privacy Policy Section */}
-            <Box>
+            <Box sx={styles.privacyPolicyContainer}>
                 <HorizonalNavbar data={PrivacyPolicyData} />
             </Box>
 

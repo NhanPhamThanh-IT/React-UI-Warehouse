@@ -97,5 +97,29 @@ export const styles = {
         borderRadius: 4,
         px: 5,
         border: '2px solid hsl(215, 15%, 92%)',
+    },
+
+    /**
+     * @typedef {Object} PrivacyPolicyContainerStyle
+     * @property {string} display - CSS display property.
+     * @property {string} flexDirection - Flexbox direction property.
+     * @property {string} justifyContent - Flexbox justify-content property.
+     * @property {string} alignItems - Flexbox align-items property.
+     * @property {string} textAlign - CSS text-align property.
+     * @property {number} mt - Margin-top value (typically a spacing unit).
+     * @property {string} backgroundImage - Background image style (CSS gradient or image URL).
+     * @property {string} borderBottom - Border bottom property (color, style, width).
+     */
+
+    /** Privacy policy container */
+    privacyPolicyContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        mt: 4,
+        backgroundImage: 'linear-gradient(#FFF 0%, hsl(210, 100%, 96%) 100%)',
+        borderBottom: '1px solid hsl(215, 15%, 92%)',
     }
 };
