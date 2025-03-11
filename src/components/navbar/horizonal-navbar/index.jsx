@@ -81,7 +81,7 @@ export const HorizonalNavbar = ({ data }) => {
                 sx={styles.tabs}
             >
                 {data.map((tab, index) => (
-                    <Tab key={index} label={tab.label} sx={styles.tab} />
+                    <Tab key={index} label={tab.label} sx={styles.tab} icon={<tab.icon />} iconPosition="start" />
                 ))}
             </Tabs>
             {data.map((tab, index) => (

@@ -107,6 +107,7 @@ export const styles = {
      * @property {string} alignItems - Flexbox align-items property.
      * @property {string} textAlign - CSS text-align property.
      * @property {number} mt - Margin-top value (typically a spacing unit).
+     * @property {number} pb - Padding-bottom value (typically a spacing unit).
      * @property {string} backgroundImage - Background image style (CSS gradient or image URL).
      * @property {string} borderBottom - Border bottom property (color, style, width).
      */
@@ -118,7 +119,8 @@ export const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        mt: 4,
+        mt: 2,
+        pb: 4,
         backgroundImage: 'linear-gradient(#FFF 0%, hsl(210, 100%, 96%) 100%)',
         borderBottom: '1px solid hsl(215, 15%, 92%)',
     }

@@ -24,7 +24,7 @@ export const TabPanel = ({ children, value, index }) => {
         <div hidden={value !== index}>
             {value === index && (
                 <Box sx={styles.contentContainer}>
-                    <Typography component="div" dangerouslySetInnerHTML={{ __html: children }} />
+                    <Typography component="div" dangerouslySetInnerHTML={{ __html: children }} sx={styles.content}/>
                 </Box>
             )}
         </div>

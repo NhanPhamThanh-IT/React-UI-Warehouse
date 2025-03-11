@@ -46,6 +46,7 @@ export const JoinUsData = {
 /**
  * Object containing data for the "Privacy Policy" section.
  * @typedef {Object} PrivacyPolicyContent
+ * @property {string} icon - Icon or image for the privacy policy section.
  * @property {string} label - Label for the privacy policy section.
  * @property {string} content - Content for the privacy policy section.
  */
@@ -58,8 +59,17 @@ export const JoinUsData = {
  * The content is in HTML format for styling and formatting.
  * The image and alt properties are optional.
  */
+
+/**
+ * Importing external icons.
+ */
+import { IoRocket } from "react-icons/io5";
+import { BsDatabaseFillCheck } from "react-icons/bs";
+import { FaUserShield } from "react-icons/fa";
+
 export const PrivacyPolicyData = [
   {
+    icon: IoRocket,
     label: "Introduction",
     content: `
               <p>Welcome to <strong style="color: hsl(210, 100%, 45%);">AestheticHub</strong>! I appreciate your trust in me and am committed to protecting your privacy. 
@@ -79,6 +89,7 @@ export const PrivacyPolicyData = [
             `
   },
   {
+    icon: BsDatabaseFillCheck,
     label: "Information We Collect",
     content: `<p>We collect different types of information to improve our services and ensure a seamless experience for users. This includes:</p>
                   <p><strong style="color: hsl(210, 100%, 45%);">Personal Information</strong>: We may collect personally identifiable information when you voluntarily provide it, such as:</p>
@@ -101,6 +112,7 @@ export const PrivacyPolicyData = [
                   You can control or disable cookies through your browser settings.</p>`
   },
   {
+    icon: FaUserShield,
     label: "How We Use Your Information",
     content: `<p>We use the collected data for the following purposes to ensure a seamless experience for our users and to maintain the highest standards of security and service quality:</p>
               <ul>
