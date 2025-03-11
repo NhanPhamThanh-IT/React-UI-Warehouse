@@ -33,20 +33,22 @@ export const Aboutpage = () => {
     return (
         <>
             {/* Introductory Section */}
-            <Box sx={styles.contentContainer}>
+            <Box sx={styles.introContainer}>
                 <HeadingSection data={IntroDatas} />
                 <StackImageSlider data={IntroDatas} />
             </Box>
 
             {/* Join Us Section */}
-            <Box sx={styles.contentContainer}>
-                <HeadingSection data={JoinUsData} />
-                <Box
-                    component="img"
-                    src={JoinUsData.image}
-                    alt={'Join us image'}
-                    sx={styles.joinUsImage}
-                />
+            <Box sx={styles.joinUsContainer}>
+                <HeadingSection data={JoinUsData} sx={styles.joinUsLeftColumn} />
+                <Box sx={styles.joinUsRightColumn}>
+                    <Box
+                        component="img"
+                        src={JoinUsData.image}
+                        alt={'Join us image'}
+                        sx={styles.joinUsImage}
+                    />
+                </Box>
             </Box>
         </>
     );
