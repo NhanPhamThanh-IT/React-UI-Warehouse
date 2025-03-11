@@ -17,7 +17,6 @@ const navItems = [
     { label: "Templates", path: "/templates" },
     { label: "Docs", path: "/docs" },
     { label: "About", path: "/about" },
-    { label: "Contact", path: "/contact" }
 ];
 
 // Exporting the navItems array

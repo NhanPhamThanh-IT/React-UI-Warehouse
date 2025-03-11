@@ -14,12 +14,14 @@ import { Box } from '@mui/material';
  */
 import { HeadingSection } from '../../../components/headings/section-heading/index';
 import { StackImageSlider } from '../../../components/images/stack-slider/index';
+import { HorizonalNavbar } from '../../../components/navbar/horizonal-navbar';
 
 /**
  * Internal constants and styles dependencies.
  */
 import { IntroDatas } from './constants';
 import { JoinUsData } from './constants';
+import { PrivacyPolicyData } from './constants';
 import { styles } from './styles';
 
 /**
@@ -50,6 +52,12 @@ export const Aboutpage = () => {
                     />
                 </Box>
             </Box>
+
+            {/* Privacy Policy Section */}
+            <Box>
+                <HorizonalNavbar data={PrivacyPolicyData} />
+            </Box>
+
         </>
     );
 };
