@@ -11,19 +11,25 @@
 // Importing necessary libraries and tools
 import { Outlet } from "react-router-dom";
 
+// Importing necessary components from MUI library
+import { Box } from "@mui/material";
+
 // Importing custom components
 import Header from "./header/index";
 import Footer from "./footer/index";
+
+// Importing styles
+import { styles } from "./styles";
 
 /**
  * Renders the main layout of the application, including the Header, dynamic content via Outlet, and Footer.
  */
 const Layout = ({ hasHeader = true, hasFooter = true }) => (
-    <>
+    <Box sx={styles.container}>
         {hasHeader && <Header />}
         <Outlet />
         {hasFooter && <Footer />}
-    </>
+    </Box>
 );
 
 // Exporting the Layout component

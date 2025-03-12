@@ -7,9 +7,9 @@ import { useRoutes, BrowserRouter, Navigate } from "react-router-dom";
 import Layout from "../components/layout/index";
 
 // Importing pages
-import { Homepage } from "../pages/MainPages/Homepage";
-import { Docspage } from "../pages/MainPages/Docspage";
-import { Templatespage } from "../pages/MainPages/Templatespage";
+import { Homepage } from "../pages/MainPages/Homepage/index";
+import { Docspage } from "../pages/MainPages/Docspage/index";
+import { Templatespage } from "../pages/MainPages/Templatespage/index";
 
 import { Aboutpage } from "../pages/SubPages/Aboutpage/index";
 

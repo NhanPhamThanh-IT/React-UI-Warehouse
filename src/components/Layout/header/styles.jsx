@@ -3,6 +3,8 @@
  * @module headerStyles
  */
 
+import zIndex from "@mui/material/styles/zIndex";
+
 /**
  * Styles for the Header component.
  * @constant {Object} headerStyles
@@ -15,12 +17,14 @@ const headerStyles = {
      * @property {number} appBar.boxShadow - Shadow level.
      * @property {string} appBar.color - Text color.
      * @property {string} appBar.backgroundColor - Background color.
+     * @property {number} appBar.zIndex - Z-index value.
      */
     appBar: {
-        position: "static",
+        position: "fixed",
         boxShadow: 2,
         color: "white",
-        backgroundColor: "black"
+        backgroundColor: "black",
+        zIndex: zIndex.drawer + 1
     },
 
     /**
