@@ -1,53 +1,88 @@
-export const styles = {
-    drawer: (open) => ({
-        width: open ? 180 : 80,
-        flexShrink: 0,
+import { styled } from "@mui/material/styles";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+
+const drawerWidth = 240;
+
+const StyledDrawer = styled(Drawer)(({ theme, open, isMobile }) => ({
+    width: isMobile ? (open ? drawerWidth : 0) : open ? drawerWidth : 72,
+    flexShrink: 0,
+    transition: "width 0.3s ease-in-out, background-color 0.3s ease-in-out",
+    backgroundColor: "#f4f4f8",
+    boxShadow: open ? "2px 0 5px rgba(0, 0, 0, 0.1)" : "none",
+    "& .MuiDrawer-paper": {
+        width: isMobile ? (open ? drawerWidth : 0) : open ? drawerWidth : 72,
         transition: "width 0.3s ease-in-out",
-        "& .MuiDrawer-paper": {
-            width: open ? 180 : 80,
-            transition: "width 0.3s ease-in-out",
-            background: "linear-gradient(135deg, #1E1F29, #2E3245)",
-            color: "#fff",
-            overflowX: "hidden",
-            pt: 8,
-            boxShadow: "4px 0 10px rgba(0,0,0,0.2)",
-            borderRight: "1px solid rgba(255,255,255,0.1)"
-        },
-    }),
-
-    listItem: (open) => ({
-        justifyContent: open ? "flex-end" : "center",
-    }),
-
-
-    iconButton: {
-        color: "#fff",
-        mx: 1,
+        overflowX: "hidden",
+        backgroundColor: "#f4f4f8",
+        marginTop: theme.spacing(8),
     },
+}));
 
-    divider: {
-        background: "rgba(255,255,255,0.2)",
-        my: 1,
+const IconButtonStyled = styled(IconButton)({
+    display: "flex",
+    justifyContent: "center",
+    padding: 12,
+    borderRadius: 8,
+    ":hover": {
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
     },
+});
 
-    sectionBox: (open) => ({
-        py: 1,
-    }),
+const collapseContainer = (open) => ({
+    display: "flex",
+    justifyContent: open ? "flex-end" : "center",
+    width: "100%",
+});
 
-    sectionTitle: {
-        color: "rgba(255,255,255,0.7)",
-        px: 2,
-        fontWeight: "bold",
+const CollapseBox = styled(Box)({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+});
+
+const SectionBox = styled(Box)(({ open }) => ({
+    padding: 5,
+}));
+
+const SectionTitle = styled(Typography)({
+    paddingLeft: 10,
+    fontWeight: "bold",
+    opacity: 0.6,
+    color: "#666",
+});
+
+const ListItemStyled = styled(ListItemButton)(({ open }) => ({
+    display: "flex",
+    alignItems: "center",
+    padding: "12px 18px",
+    borderRadius: 8,
+    transition: "background 0.2s",
+    ":hover": {
+        backgroundColor: "rgba(0, 0, 0, 0.08)",
     },
+}));
 
-    listItemButton: (open) => ({
-        px: open ? 2.5 : 1.5,
-        borderRadius: "8px",
-        my: 0.5,
-    }),
+const ListItemIconStyled = styled(ListItemIcon)(({ open }) => ({
+    minWidth: "unset",
+    marginRight: open ? 12 : 0,
+    color: "#555",
+    display: "flex",
+    justifyContent: "center",
+}));
 
-    listItemIcon: {
-        color: "#fff",
-        minWidth: 40,
-    },
+export const styles = {
+    drawerWidth,
+    StyledDrawer,
+    IconButtonStyled,
+    collapseContainer,
+    CollapseBox,
+    SectionBox,
+    SectionTitle,
+    ListItemStyled,
+    ListItemIconStyled,
 };

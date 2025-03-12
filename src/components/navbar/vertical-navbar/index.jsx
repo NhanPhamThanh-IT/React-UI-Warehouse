@@ -1,45 +1,61 @@
 import React, { useState } from "react";
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, IconButton, Box, Tooltip, Typography, Divider } from "@mui/material";
+import {
+    Box,
+    List,
+    ListItem,
+    ListItemText,
+    Tooltip,
+    Divider,
+    useMediaQuery
+} from "@mui/material";
 import { Menu, ChevronLeft } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { styles } from "./styles";
 
 export const VerticalNavbar = ({ menuItems }) => {
     const [open, setOpen] = useState(true);
+    const isMobile = useMediaQuery("(max-width: 600px)");
 
     return (
-        <Drawer variant="permanent" sx={styles.drawer(open)}>
+        <styles.StyledDrawer
+            variant={isMobile ? "temporary" : "permanent"}
+            open={open}
+            onClose={() => setOpen(false)}
+            isMobile={isMobile}
+        >
             <List>
-                <ListItem disablePadding sx={styles.listItem(open)}>
-                    <IconButton onClick={() => setOpen(!open)} sx={styles.iconButton}>
-                        {open ? <Box display="flex" alignItems="center">
-                            <Typography>Collapse</Typography>
-                            <ChevronLeft />
-                        </Box>
-                            : <Menu />}
-                    </IconButton>
+                <ListItem disablePadding sx={styles.collapseContainer(open)}>
+                    <styles.IconButtonStyled onClick={() => setOpen(!open)}>
+                        {open ? (
+                            <styles.CollapseBox>
+                                <ChevronLeft />
+                            </styles.CollapseBox>
+                        ) : (
+                            <Menu />
+                        )}
+                    </styles.IconButtonStyled>
                 </ListItem>
-                <Divider sx={styles.divider} />
+                <Divider sx={{ margin: "10px 0" }} />
                 {menuItems.map((section, index) => (
-                    <Box key={index} sx={styles.sectionBox(open)}>
-                        {open && <Typography variant="caption" sx={styles.sectionTitle}>{section.group}</Typography>}
+                    <styles.SectionBox key={index} open={open}>
+                        {open && <styles.SectionTitle variant="caption">{section.group}</styles.SectionTitle>}
                         <List>
                             {section.items.map((item, idx) => (
                                 <motion.div key={idx} whileHover={{ scale: 1.05 }}>
                                     <ListItem disablePadding>
                                         <Tooltip title={!open ? item.text : ""} placement="right">
-                                            <ListItemButton sx={styles.listItemButton(open)}>
-                                                <ListItemIcon sx={styles.listItemIcon}>{item.icon}</ListItemIcon>
+                                            <styles.ListItemStyled open={open}>
+                                                <styles.ListItemIconStyled open={open}>{item.icon}</styles.ListItemIconStyled>
                                                 {open && <ListItemText primary={item.text} />}
-                                            </ListItemButton>
+                                            </styles.ListItemStyled>
                                         </Tooltip>
                                     </ListItem>
                                 </motion.div>
                             ))}
                         </List>
-                    </Box>
+                    </styles.SectionBox>
                 ))}
             </List>
-        </Drawer>
+        </styles.StyledDrawer>
     );
 };
