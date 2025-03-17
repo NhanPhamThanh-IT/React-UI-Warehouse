@@ -7,11 +7,11 @@ export const styles = {
     /**
      * Root container style.
      * 
-     * - `display: "flex"`: Enables a flexible layout.
-     * - `backgroundColor: "#f5f5f5"`: Sets a light gray background color.
+     * - `display: Enables a flexible layout.
+     * - `backgroundColor: Sets a light gray background color.
      */
     container: {
         display: "flex",
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "white",
     },
 };
