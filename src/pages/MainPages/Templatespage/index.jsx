@@ -1,16 +1,29 @@
+/**
+ * @file TemplatesPage component - Displays a list of UI component templates with filtering options.
+ * @module TemplatesPage
+ */
+
 import React, { useState } from 'react';
 import { Code, CopyAll, Check } from '@mui/icons-material';
 import { Box, Card, CardContent, Typography, IconButton, Button, Stack } from '@mui/material';
 
-import { cards } from '../../../../templates/cards';
-import { alerts } from '../../../../templates/alerts';
+import { templates } from './constants';
 import { containerStyles, headerStyles, filterButtonStyles, cardStyles, codeBlockStyles } from './styles';
 
-const templates = [...cards, ...alerts];
-
+/**
+ * CodeBlock component - Displays a code snippet with a copy-to-clipboard feature.
+ * 
+ * @param {Object} props - Component properties.
+ * @param {string} props.code - The code snippet to display.
+ * @returns {JSX.Element} The rendered CodeBlock component.
+ */
 const CodeBlock = ({ code }) => {
     const [copied, setCopied] = useState(false);
 
+    /**
+     * Handles copying the code to the clipboard.
+     * @async
+     */
     const handleCopy = async () => {
         await navigator.clipboard.writeText(code);
         setCopied(true);
@@ -29,10 +42,24 @@ const CodeBlock = ({ code }) => {
     );
 };
 
+/**
+ * TemplatesPage component - Displays UI component templates with category filtering.
+ * 
+ * @returns {JSX.Element} The rendered TemplatesPage component.
+ */
 export const Templatespage = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
+    /**
+     * Extracts unique categories from the templates list.
+     * @type {string[]}
+     */
     const categories = [...new Set(templates.map(t => t.category))];
+
+    /**
+     * Filters templates based on the selected category.
+     * @type {Array}
+     */
     const filteredTemplates = selectedCategory === "All" ? templates : templates.filter(t => t.category === selectedCategory);
 
     return (
